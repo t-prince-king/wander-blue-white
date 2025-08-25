@@ -26,7 +26,15 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					light: 'hsl(var(--primary-light))',
+					dark: 'hsl(var(--primary-dark))'
+				},
+				travel: {
+					blue: 'hsl(var(--travel-blue))',
+					'blue-light': 'hsl(var(--travel-blue-light))',
+					'blue-dark': 'hsl(var(--travel-blue-dark))',
+					'blue-accent': 'hsl(var(--travel-blue-accent))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
