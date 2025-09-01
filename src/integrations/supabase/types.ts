@@ -14,7 +14,131 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bookings: {
+        Row: {
+          created_at: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          destination_id: string
+          id: string
+          message: string | null
+          number_of_people: number
+          preferred_date: string | null
+          status: string
+          total_price: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          destination_id: string
+          id?: string
+          message?: string | null
+          number_of_people?: number
+          preferred_date?: string | null
+          status?: string
+          total_price: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string
+          destination_id?: string
+          id?: string
+          message?: string | null
+          number_of_people?: number
+          preferred_date?: string | null
+          status?: string
+          total_price?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookings_destination_id_fkey"
+            columns: ["destination_id"]
+            isOneToOne: false
+            referencedRelation: "destinations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      contact_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          phone: string
+          service_type: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          phone: string
+          service_type: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          phone?: string
+          service_type?: string
+        }
+        Relationships: []
+      }
+      destinations: {
+        Row: {
+          created_at: string
+          description: string
+          duration: string | null
+          highlights: string[] | null
+          id: string
+          image_url: string | null
+          location: string
+          max_capacity: number
+          name: string
+          price_per_person: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          duration?: string | null
+          highlights?: string[] | null
+          id?: string
+          image_url?: string | null
+          location: string
+          max_capacity?: number
+          name: string
+          price_per_person: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          duration?: string | null
+          highlights?: string[] | null
+          id?: string
+          image_url?: string | null
+          location?: string
+          max_capacity?: number
+          name?: string
+          price_per_person?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
